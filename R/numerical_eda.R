@@ -1,6 +1,6 @@
 #' Numerical Plotting Function
 #'
-#' This function takes in a data frame object, two numeric columns,
+#' This function takes in a tibble or dataframe object, two numeric columns,
 #' and produces either a scatter or line plot to visualize the relationship
 #' between the two numerical features. Users can optionally change default
 #' arguments for plot-type, color, title, size of text, color-scheme, and
