@@ -7,21 +7,21 @@
 #' toggle log transformation for the x and y axis.
 #'
 #' @param data A tibble or data frame object.
-#' @param xval A string variable used to represent the x-axis.
-#' @param yval A string variable used to represent the y-axis.
-#' @param plot_type An optional string variable used to represent
+#' @param xval A character variable used to represent the x-axis.
+#' @param yval A  variable used to represent the y-axis.
+#' @param plot_type An optional character variable used to represent
 #' the graphical relationship between xval and yval,
 #' options are scatter or line plot.
-#' @param color An optional string variable used to group the data
+#' @param color An optional character variable used to group the data
 #' points in different colors.
-#' @param title An optional string variable used to set the title of the plot.
+#' @param title An optional character variable used to set the title of the plot.
 #' @param font_size An optional integer variable used to set the font size.
-#' @param color_scheme An optional string variable used to set the color scheme
+#' @param color_scheme An optional character variable used to set the color scheme
 #' @param plot_height An optional integer variable used to specify plot height
 #' @param plot_width An optional integer variable used to specify plot width
-#' @param x_transform An optional boolean, whether a log transformation occurs
+#' @param x_transform An optional logical, whether a log transformation occurs
 #' on the x-axis.
-#' @param y_transform An optional boolean, whether a log transformation occurs
+#' @param y_transform An optional logical, whether a log transformation occurs
 #' on the y-axis.
 #'
 #' @return numerical_plot ggplot2 object
