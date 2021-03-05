@@ -10,7 +10,7 @@
 #' @param data A tibble or a dataframe 
 #' @param xval A character variable used to represent the x-axis.
 #' @param plot_type An optional character variable used to specify plot type. 
-#' options include "histogram" and "density".
+#' Options include "histogram" and "density".
 #' @param color An optional character variable used to set the color variable of
 #'  the plot
 #' @param title An optional character variable used to set the title of the plot
