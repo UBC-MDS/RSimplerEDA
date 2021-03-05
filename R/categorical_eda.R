@@ -25,6 +25,11 @@
 #' @return A ggplot2 object
 #' @export 
 #' 
+#' @import tibble
+#' @import dplyr
+#' @import tidyr
+#' @import ggplot2
+#' 
 #' @examples 
 #' 
 #' df <- data(mtcars)
