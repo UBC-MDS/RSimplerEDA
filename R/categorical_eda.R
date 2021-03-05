@@ -48,7 +48,7 @@
 #' 
 categorical_eda <- function(data, 
                             xval,
-                            plot_type "histogram",
+                            plot_type = "histogram",
                             color = NULL,
                             title = NULL,
                             font_size = 10,
