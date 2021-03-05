@@ -8,13 +8,13 @@
 #'
 #' @param data A tibble or data frame object.
 #' @param xval A character variable used to represent the x-axis.
-#' @param yval A  variable used to represent the y-axis.
+#' @param yval A character variable used to represent the y-axis.
 #' @param plot_type An optional character variable used to represent
 #' the graphical relationship between xval and yval,
-#' options are scatter or line plot.
+#' options are "scatter" or "line" plot.
 #' @param color An optional character variable used to group the data
 #' points in different colors.
-#' @param title An optional character variable used to set the title of the plot.
+#' @param title An optional character variable used to set the title and axis.
 #' @param font_size An optional integer variable used to set the font size.
 #' @param color_scheme An optional character variable used to set the color scheme
 #' @param plot_height An optional integer variable used to specify plot height
