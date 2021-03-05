@@ -44,11 +44,11 @@
 #'   font_size = 12
 #' )
 numerical_eda <- function(data,
-                          xval = NULL,
-                          yval = NULL,
+                          xval,
+                          yval,
                           plot_type = "scatter",
-                          color = NULL,
-                          title = NULL,
+                          color,
+                          title,
                           font_size = 10,
                           color_scheme = "Tableau 20",
                           plot_height = 400,
