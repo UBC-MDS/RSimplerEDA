@@ -14,7 +14,7 @@
 #' Other proper diverging color scheme reference can be found in https://ggplot2.tidyverse.org/reference/scale_brewer.html
 #' @param plot_width An optional integer variable. The width of the plot. The default is 450.
 #' @param plot_height An optional integer variable. The height of the plot. The default is 450.
-#' @param title A optional character variable. The title of the correlation map. The default is "Correlation Map".
+#' @param title An optional character variable. The title of the correlation map. The default is "Correlation Map".
 #'
 #' @return corr_map A ggplot object. The correlation map plot.
 #' @export
