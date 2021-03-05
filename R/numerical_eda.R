@@ -6,7 +6,7 @@
 #' arguments for plot-type, color, title, size of text, color-scheme, and
 #' toggle log transformation for the x and y axis.
 #'
-#' @param data A tibble.
+#' @param data A tibble or data frame object.
 #' @param xval A string variable used to represent the x-axis.
 #' @param yval A string variable used to represent the y-axis.
 #' @param plot_type An optional string variable used to represent
