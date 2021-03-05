@@ -24,7 +24,7 @@
 #' @param y_transform An optional logical, whether a log transformation occurs
 #' on the y-axis.
 #'
-#' @return numerical_plot ggplot2 object
+#' @return numerical_plot A ggplot2 object. The numerical plot.
 #' @export
 #'
 #' @import tibble
