@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# RSimplerEDA - A Package to Simplify Common Plotting for Exploratory Data Analysis in R
+# RSimplerEDA 
+
+A Package to Simplify Common Plotting for Exploratory Data Analysis in R
 
 <!-- badges: start -->
 
