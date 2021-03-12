@@ -2,7 +2,7 @@
 % Please edit documentation in R/corr_map.R
 \name{corr_map}
 \alias{corr_map}
-\title{Correlation Map Plotting Function}
+\title{Title Correlation Map Plotting Function}
 \usage{
 corr_map(
   data,

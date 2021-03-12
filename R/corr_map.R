@@ -1,5 +1,4 @@
-
-#' Correlation Map Plotting Function
+#' Title Correlation Map Plotting Function
 #'
 #' Plot a correlation map with the given tibble or dataframe object and
 #' a character vector of numerical features. Users are allowed to set multiple
@@ -25,6 +24,7 @@
 #' The default is "Correlation Map".
 #'
 #' @return corr_map A ggplot object. The correlation map plot.
+#'
 #' @export
 #'
 #'
@@ -32,9 +32,6 @@
 #' df <- data(mtcars)
 #' corr_map <- corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
 #'
-#'
-#'
-library(tibble)
 corr_map <- function(data,
                   features,
                   corr_method='pearson',
@@ -42,6 +39,10 @@ corr_map <- function(data,
                   plot_width=450,
                   plot_height=450,
                   title="Correlation Map") {
+
+    # Subset the dataframe with selected numeric features and drop NA
+    df <- data[features]
+    df <- tidyr::drop_na(df)
 
     # Test the dataframe input on whether it's a dataframe or tibble
     if (!is.data.frame(data) | tibble::is_tibble(data))
@@ -58,9 +59,9 @@ corr_map <- function(data,
     }
 
     # Test if the columns in features exist in the dataframe.
-    if (!all(features %in% colnames(data))) {
-        stop("The given numeric features should exist in the data")
-    }
+    # if (!all(features %in% colnames(data))) {
+    #     stop("The given numeric features should exist in the data")
+    # }
 
     # Test if corr_method one of the 3 supported methods - 'pearson', 'kendall', 'spearman'.
     if (!corr_method %in% c("pearson", "kendall", "spearman'")) {
@@ -91,9 +92,7 @@ corr_map <- function(data,
 
 
 
-    # Subset the dataframe with selected numeric features and drop NA
-    df <- data[features]
-    df <- tidyr::drop_na(df)
+
 
     # Test colums to check if columns provided are numeric
     if (!all(sapply(df, is.numeric)))
@@ -129,4 +128,5 @@ corr_map <- function(data,
                                                 face="bold",
                                                 margin = margin(10, 0, 10, 0)),
                       text =  element_text(size = 14))
+    corr_map
 }
