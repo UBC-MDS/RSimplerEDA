@@ -27,10 +27,6 @@
 #' @return numerical_plot A ggplot2 object. The numerical plot.
 #' @export
 #'
-#' @import tibble
-#' @import dplyr
-#' @import tidyr
-#' @import ggplot2
 #'
 #' @examples
 #'
