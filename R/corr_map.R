@@ -27,7 +27,7 @@
 #' @import ggplot2
 #' @import stringr
 #' @import ggthemes
-#' @import assertthat
+#' @importFrom assertthat is.string
 #' @import rlang
 #'
 #' @export
@@ -93,8 +93,6 @@ corr_map <- function(data,
         tibble::rownames_to_column(var ="x") %>%
         tidyr::pivot_longer(!x, names_to = "y", values_to = "corr")
 
-    # Set the size of the plot --Trial
-    options(repr.plot.width = 20, repr.plot.height = 20)
 
     # Plot the correlation heatmap
     corr_map <- ggplot2::ggplot(data = corr_df,
