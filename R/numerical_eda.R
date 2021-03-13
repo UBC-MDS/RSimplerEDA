@@ -32,18 +32,18 @@
 #' @import ggplot2
 #' @import stringr
 #' @import ggthemes
-#' @import assertthat
+#' @importFrom assertthat is.string
 #' @import rlang
 #'
 #' @examples
 #'
-#' df <- data(mtcars)
-#' numerical_plot <- categorical_eda(
+#' df <- iris
+#' numerical_plot <- numerical_eda(
 #'   data = df,
-#'   xval = Horsepower,
-#'   yval = Acceleration,
-#'   color = Origin,
-#'   title = "Horsepower vs Acceleration",
+#'   xval = Petal.Length,
+#'   yval = Petal.Width,
+#'   color = Species,
+#'   title = "Petal.Length vs Petal.Width",
 #'   font_size = 12
 #' )
 numerical_eda <- function(data,

@@ -2,7 +2,8 @@
 #'
 #' Plot a correlation map with the given tibble or dataframe object and
 #' a character vector of numerical features. Users are allowed to set multiple
-#' arguments regarding the setting of the correlation plot including correlation
+#' arguments regarding the setting of the correlation plot including
+#' correlation
 #' method, color schemes, plot width, height, and plot title.
 #' @param data A tibble or dataframe
 #' @param features A character vector. It contains names of numerical features
@@ -16,8 +17,8 @@
 #' can be "PiYG", "PRGn", "PuOr", etc.
 #' Other proper diverging color scheme reference can be found in
 #' https://ggplot2.tidyverse.org/reference/scale_brewer.html
-#' @param title An optional character variable. The title of the correlation map.
-#' The default is "Correlation Map".
+#' @param title An optional character variable. The title of the correlation
+#' map. The default is "Correlation Map".
 #'
 #' @return corr_map A ggplot object. The correlation map plot.
 #'
@@ -34,17 +35,15 @@
 #'
 #'
 #' @examples
-#' df <- data(mtcars)
-#' corr_map <- corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
-#'
-
-
-
+#' df <- mtcars
+#' corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
 corr_map <- function(data,
                      features,
                      corr_method='pearson',
                      color_scheme='RdYlGn',
                      title="Correlation Map") {
+
+    x <- y <- corr <- NULL
 
     # Test the dataframe input on whether it's a dataframe or tibble
     if (!is.data.frame(data)) {
@@ -79,7 +78,7 @@ corr_map <- function(data,
 
     # Subset the dataframe with selected numeric features and drop NA
     df <- data[features]
-    df <- tidyr::drop_na(df)
+    # df <- tidyr::drop_na(df)
 
     # Test colums to check if columns provided are numeric
     if (!all(sapply(df, is.numeric)))
