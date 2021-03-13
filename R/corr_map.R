@@ -32,101 +32,177 @@
 #' df <- data(mtcars)
 #' corr_map <- corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
 #'
-corr_map <- function(data,
-                  features,
-                  corr_method='pearson',
-                  color_scheme='RdYlGn',
-                  plot_width=450,
-                  plot_height=450,
-                  title="Correlation Map") {
 
-    # Subset the dataframe with selected numeric features and drop NA
-    df <- data[features]
-    df <- tidyr::drop_na(df)
+
+# corr_map <- function(data,
+#                   features,
+#                   corr_method='pearson',
+#                   color_scheme='RdYlGn',
+#                   plot_width=450,
+#                   plot_height=450,
+#                   title="Correlation Map") {
+#
+#     # Subset the dataframe with selected numeric features and drop NA
+#     df <- data[features]
+#     # df <- dplyr::select(data, as.factor(features))
+#     df <- tidyr::drop_na(df)
+#
+#     # Test the dataframe input on whether it's a dataframe or tibble
+#     if (!is.data.frame(data) | tibble::is_tibble(data))
+#         stop("The input `data` should either be a dataframe or tibble")
+#
+#     # Test the input 'features' is a vector of characters
+#     if (!is.character(features) | !is.vector(features)) {
+#         stop("The value of the argument `features` should be a vector of characters")
+#     }
+#
+#     # Test the input 'features' has at least 2 elements
+#     if (length(features) < 2) {
+#         stop("There should be at least 2 features in the `features` vector")
+#     }
+#
+#     #Test if the columns in features exist in the dataframe.
+#     if (!all(features %in% colnames(data))) {
+#         stop("The given numeric features should exist in the data")
+#     }
+#
+#     # Test if corr_method one of the 3 supported methods - 'pearson', 'kendall', 'spearman'.
+#     if (!corr_method %in% c("pearson", "kendall", "spearman'")) {
+#         stop("The correlation method should be 'pearson', 'kendall',
+#             or 'spearman'.")
+#     }
+#
+#     # Test the input `color_scheme` is character type
+#     if (!is.character(color_scheme)) {
+#         stop("The color scheme should be given as a char")
+#     }
+#
+#     # Test the input `plot_width` is integer type
+#     if (!is.numeric(plot_width)) {
+#         stop("The plot_width should be given as numericloa")
+#     }
+#
+#     # Test the input `plot_height` is integer type
+#     if (!is.numeric(plot_height)) {
+#         stop("The plot_height should be given as numeric")
+#     }
+#
+#
+#     # Test the input `title` is character type
+#     if (!is.character(title)) {
+#         stop("The title should be given as a char")
+#     }
+#
+#     # check if columns provided are numeric
+#     if (!all(sapply(df, is.numeric)))
+#         stop("All `features` should be numeric")
+#
+#
+#
+#     # Calculate the correlation with the specified method
+#     corr_cal <- round(stats::cor(df, method = corr_method),2)
+#
+#     # Convert it into tidy data format for plotting
+#     corr_df <- data.frame(corr_cal) %>%
+#         tibble::rownames_to_column(var ="x") %>%
+#         tidyr::pivot_longer(!x, names_to = "y", values_to = "corr")
+#
+#     # Set the size of the plot --Trial
+#     options(repr.plot.width = 20, repr.plot.height = 20)
+#
+#     # Plot the correlation heatmap
+#     corr_map <- ggplot(data = corr_df,
+#                                 ggplot2::aes(x = x, y = y, fill = corr)) +
+#                 geom_tile(alpha=0.7) +
+#                 labs(x = "",
+#                      y = "",
+#                      fill = "Correlation",
+#                      title = title) +
+#                 scale_fill_distiller(palette = color_scheme,
+#                                      direction = 1,
+#                                      limits = c(-1,1)) +
+#                 theme(panel.grid.major = element_blank(),
+#                       panel.grid.minor = element_blank(),
+#                       plot.title = element_text(size=18,
+#                                                 face="bold",
+#                                                 margin = margin(10, 0, 10, 0)),
+#                       text =  element_text(size = 14))
+#     corr_map
+# }
+
+
+corr_map <- function(data,
+                     features,
+                     corr_method='pearson',
+                     color_scheme='RdYlGn',
+                     plot_width=450,
+                     plot_height=450,
+                     title="Correlation Map") {
 
     # Test the dataframe input on whether it's a dataframe or tibble
     if (!is.data.frame(data) | tibble::is_tibble(data))
         stop("The input `data` should either be a dataframe or tibble")
-
     # Test the input 'features' is a vector of characters
     if (!is.character(features) | !is.vector(features)) {
         stop("The value of the argument `features` should be a vector of characters")
     }
-
     # Test the input 'features' has at least 2 elements
     if (length(features) < 2) {
         stop("There should be at least 2 features in the `features` vector")
     }
-
     # Test if the columns in features exist in the dataframe.
     # if (!all(features %in% colnames(data))) {
     #     stop("The given numeric features should exist in the data")
     # }
-
     # Test if corr_method one of the 3 supported methods - 'pearson', 'kendall', 'spearman'.
     if (!corr_method %in% c("pearson", "kendall", "spearman'")) {
         stop("The correlation method should be 'pearson', 'kendall',
             or 'spearman'.")
     }
-
     # Test the input `color_scheme` is character type
     if (!is.character(color_scheme)) {
         stop("The color scheme should be given as a char")
     }
-
     # Test the input `plot_width` is integer type
     if (!is.numeric(plot_width)) {
         stop("The plot_width should be given as numericloa")
     }
-
     # Test the input `plot_height` is integer type
     if (!is.numeric(plot_height)) {
         stop("The plot_height should be given as numeric")
     }
-
-
     # Test the input `title` is character type
     if (!is.character(title)) {
         stop("The title should be given as a char")
     }
-
-
-
-
-
+    # Subset the dataframe with selected numeric features and drop NA
+    df <- data[features]
+    df <- tidyr::drop_na(df)
     # Test colums to check if columns provided are numeric
     if (!all(sapply(df, is.numeric)))
         stop("All `features` should be numeric")
-
-
-
     # Calculate the correlation with the specified method
     corr_cal <- round(stats::cor(df, method = corr_method),2)
-
     # Convert it into tidy data format for plotting
     corr_df <- data.frame(corr_cal) %>%
-        rownames_to_column(var ="x") %>%
+        tibble::rownames_to_column(var ="x") %>%
         tidyr::pivot_longer(!x, names_to = "y", values_to = "corr")
-
     # Set the size of the plot --Trial
     options(repr.plot.width = 20, repr.plot.height = 20)
-
     # Plot the correlation heatmap
     corr_map <- ggplot2::ggplot(data = corr_df,
                                 ggplot2::aes(x = x, y = y, fill = corr)) +
-                ggplot2::geom_tile(alpha=0.7) +
-                labs(x = "",
-                     y = "",
-                     fill = "Correlation",
-                     title = title) +
-                scale_fill_distiller(palette = color_scheme,
-                                     direction = 1,
-                                     limits = c(-1,1)) +
-                theme(panel.grid.major = element_blank(),
-                      panel.grid.minor = element_blank(),
-                      plot.title = element_text(size=18,
-                                                face="bold",
-                                                margin = margin(10, 0, 10, 0)),
-                      text =  element_text(size = 14))
-    corr_map
+        ggplot2::geom_tile(alpha=0.7) +
+        ggplot2::labs(x = "",
+             y = "",
+             fill = "Correlation",
+             title = title) +
+        ggplot2::scale_fill_distiller(palette = color_scheme,
+                             direction = 1,
+                             limits = c(-1,1)) +
+        ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
+              panel.grid.minor = ggplot2::element_blank(),
+              plot.title = ggplot2::element_text(size=18,
+                                        face="bold"),
+              text = ggplot2::element_text(size = 14))
 }
