@@ -54,8 +54,9 @@ devtools::install_github("UBC-MDS/RSimplerEDA")
 ```
 
 ## Dependencies
-- 
-s
+- TODO
+
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
