@@ -112,14 +112,21 @@ test_density_plot()
 #' @examples
 #' test_exceptions()
 test_exceptions <- function(){
-  test_that("Function should throw an error", {
+  test_that("data argument should be a data frame", {
     expect_error(categorical_eda(c(penguins), xval = body_mass_g, color = island, facet_factor = "island", facet_col = 1))
+  })
+  test_that("xval should be an element in the input data frame", {
     expect_error(categorical_eda(penguins, xval = body_type, color = island, facet_factor = "island", facet_col = 1))
+  })
+  test_that("plot type should be either histogram or density",{
     expect_error(categorical_eda(penguins, xval = body_mass_g, plot_type="line", color = island))
+  })
+  test_that("opacity should be less than 1 and greater than 0", {
     expect_error(categorical_eda(penguins, xval = body_mass_g, plot_type="density", color = island, opacity=6))
+  })
+  test_that("olor should be an element in the input data frame", {
     expect_error(categorical_eda(penguins, xval = body_mass_g, color = food, facet_factor = "island", facet_col = 1))
-    }
-    )
+  })
 }
 
 test_exceptions()
