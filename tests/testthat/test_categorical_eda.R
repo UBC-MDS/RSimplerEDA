@@ -124,7 +124,7 @@ test_exceptions <- function(){
   test_that("opacity should be less than 1 and greater than 0", {
     expect_error(categorical_eda(penguins, xval = body_mass_g, plot_type="density", color = island, opacity=6))
   })
-  test_that("olor should be an element in the input data frame", {
+  test_that("Color should be an element in the input data frame", {
     expect_error(categorical_eda(penguins, xval = body_mass_g, color = food, facet_factor = "island", facet_col = 1))
   })
 }
