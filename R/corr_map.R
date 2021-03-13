@@ -27,7 +27,7 @@
 #' @import ggplot2
 #' @import stringr
 #' @import ggthemes
-#' @import assertthat
+#' @importFrom assertthat is.string
 #' @import rlang
 #'
 #' @export
