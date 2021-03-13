@@ -94,7 +94,6 @@ corr_map <- function(data,
         tidyr::pivot_longer(!x, names_to = "y", values_to = "corr")
 
     # Set the size of the plot --Trial
-    options(repr.plot.width = 20, repr.plot.height = 20)
 
     # Plot the correlation heatmap
     corr_map <- ggplot2::ggplot(data = corr_df,
