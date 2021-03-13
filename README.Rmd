@@ -40,13 +40,8 @@ There are a number of packages that already provide similar functionality in the
 
 ## Installation
 
-You can install the released version of RSimplerEDA from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("RSimplerEDA")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -54,7 +49,17 @@ devtools::install_github("UBC-MDS/RSimplerEDA")
 ```
 
 ## Dependencies
-- TODO
+
+- ggplot2 >= 3.3.3
+- dplyr >=1.0.3
+- stringr >= 1.4.0
+- tibble >=3.0.4
+- tidyr >= 1.1.2
+- ggthemes >= 4.2.0
+- assertthat >= 0.2.1
+- rlang >= 0.4.10
+- palmerpenguins >= 0.1.0
+- magrittr >= 2.0.1
 
 
 ## Example
