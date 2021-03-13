@@ -1,3 +1,10 @@
+#' Tests the numerical_eda function when plotting either scatter or line plot
+#'
+#' @return None. the function will not throw an error
+#' if the tests fail.
+#'
+#' @examples
+#' test_numerical()
 test_numerical <- function() {
     # Unit test for scatter plot with no transformations
     test_that("Plot should use geom_point as the mark.", {
@@ -21,7 +28,7 @@ test_numerical <- function() {
     })
 
     # Unit test for line plot with no transformations
-    test_that("Plot should use geom_line and correctly map variables to the correct axis.", {
+    test_that("Plot should use geom_line as the mark", {
         plot <- numerical_eda(iris, xval = Sepal.Length, yval = Sepal.Width, color = Species, plot_type = "line", font_size = 10)
         expect_true("GeomLine" %in% c(class(plot$layers[[1]]$geom)))
         expect_true("GeomPath" %in% c(class(plot$layers[[1]]$geom)))
@@ -68,8 +75,8 @@ test_numerical <- function() {
         expect_equal(log(iris$Petal.Width), rlang::get_expr(plot$mapping$y))
     })
 
-    # Unit test for line plot with  log transormations on x and y axis
-    test_that("Plot should use geom_point and correctly map variables to the correct axis.", {
+    # Unit test for line plot with  log transformations on x and y axis
+    test_that("Plot should use geom_point as the mark", {
         plot <- numerical_eda(iris, xval = Sepal.Length, yval = Sepal.Width, color = Species, title = "Line plot", plot_type = "line", font_size = 10, x_transform = TRUE, y_transform = TRUE)
         expect_true("GeomLine" %in% c(class(plot$layers[[1]]$geom)))
         expect_true("GeomPath" %in% c(class(plot$layers[[1]]$geom)))
@@ -98,6 +105,13 @@ test_numerical <- function() {
 }
 test_numerical()
 
+#' Tests the test_defensive function when plotting either scatter or line plot
+#'
+#' @return None. the function will not throw an error
+#' if the tests fail.
+#'
+#' @examples
+#' test_defensive()
 test_defensive <- function(){
     test_that("Function should throw an error if the data argument is not a data frame object", {
         expect_error(numerical_eda(list(iris), xval = Petal.Length, yval = Petal.Width, color = Species, title = "Scatter plot", plot_type = "scatter", font_size = 10))

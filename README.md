@@ -1,15 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# RSimplerEDA 
-
-A Package to Simplify Common Plotting for Exploratory Data Analysis in R
+RSimplerEDA - A Package to Simplify Common Plotting for Exploratory Data Analysis in R
+======================================================================================
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
-## Overview
+Overview
+--------
 
 Exploratory Data analysis (EDA) is an important step in any data
 analysis. However, carrying out EDA with the ggplot2 package requires a
@@ -23,7 +22,8 @@ plots based on specific user needs (theme, title, font, size and etc.).
 The users are able to spend more time on analyzing the data set and less
 time configuring ggplot plot settings.
 
-## Package positioning
+Package positioning
+-------------------
 
 There are a number of packages that already provide similar
 functionality in the R Ecosystem, such as
@@ -34,7 +34,8 @@ However, most of them are not easily customizable. Our RSimplerEda
 package is light-weighted with focus in 3 common EDA plots and allows
 flexibility from plot types, color scheme, to plot titles.
 
-## Functions
+Functions
+---------
 
 1.  `corr_map`: Plot a correlation map with the given dataframe object
     and a character vector with numerical features. Users are allowed to
@@ -56,39 +57,39 @@ flexibility from plot types, color scheme, to plot titles.
     function also offers customization on color, plot title, font size,
     color-scheme, plot size, opacity level, and facet factor.
 
-## Installation
+Installation
+------------
 
 You can install the released version of RSimplerEDA from
 [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("RSimplerEDA")
-```
+    install.packages("RSimplerEDA")
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("UBC-MDS/RSimplerEDA")
-```
+    # install.packages("devtools")
+    devtools::install_github("UBC-MDS/RSimplerEDA")
 
-## \#\# Dependencies
+Dependencies
+------------
 
-s \#\# Example
+-   TODO
+
+Example
+-------
 
 This is a basic example which shows you how to solve a common problem:
 
-``` r
-library(RSimplerEDA)
-## basic example code
-```
+    library(RSimplerEDA)
+    ## basic example code
 
-## Contributors
+Contributors
+------------
 
 ### Development Lead
 
 | Contributor Name | GitHub Username                               |
-| ---------------- | --------------------------------------------- |
+|------------------|-----------------------------------------------|
 | Cheuk (Chuck) Ho | [ChuckHo777](https://github.com/ChuckHo777)   |
 | Deepak Sidhu     | [deepaksidhu](https://github.com/deepaksidhu) |
 | Nicholas Wu      | [nichowu](https://github.com/nichowu)         |

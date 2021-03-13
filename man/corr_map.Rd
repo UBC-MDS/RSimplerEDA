@@ -29,8 +29,8 @@ can be "PiYG", "PRGn", "PuOr", etc.
 Other proper diverging color scheme reference can be found in
 https://ggplot2.tidyverse.org/reference/scale_brewer.html}
 
-\item{title}{An optional character variable. The title of the correlation map.
-The default is "Correlation Map".}
+\item{title}{An optional character variable. The title of the correlation
+map. The default is "Correlation Map".}
 }
 \value{
 corr_map A ggplot object. The correlation map plot.
@@ -38,11 +38,11 @@ corr_map A ggplot object. The correlation map plot.
 \description{
 Plot a correlation map with the given tibble or dataframe object and
 a character vector of numerical features. Users are allowed to set multiple
-arguments regarding the setting of the correlation plot including correlation
+arguments regarding the setting of the correlation plot including
+correlation
 method, color schemes, plot width, height, and plot title.
 }
 \examples{
-df <- data(mtcars)
-corr_map <- corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
-
+df <- mtcars
+corr_map(df, c('hp', 'disp', 'cyl', 'qsec'))
 }

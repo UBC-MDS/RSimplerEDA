@@ -2,13 +2,11 @@
 #'
 #' @return None.
 #' the function shouldn't prompt error
-
 #' @examples
 #' test_corr_map()
-
 test_corr_map <- function() {
     # set test data for testing
-    test_data <- mtcars %>%  tidyr::drop_na()
+    test_data <- mtcars
     features <- c('hp', 'disp', 'cyl', 'qsec')
     c_map <- corr_map(test_data, features, title = "Correlation Map")
 
@@ -23,8 +21,10 @@ test_corr_map <- function() {
         expect_true("Geom" %in% c(class(c_map$layers[[1]]$geom)))
     })
 
+
     # Test the plot for mapping the right variables to x-axis, y-axis and fill respectively
     test_that('Plot should map x, y, corr in the subset dataframe to x-axis, y-axis and fill respectively', {
+
         expect_true('x'  == rlang::get_expr(c_map$mapping$x))
         expect_true('y' == rlang::get_expr(c_map$mapping$y))
         expect_true('corr' == rlang::get_expr(c_map$mapping$fill))
@@ -45,15 +45,13 @@ test_corr_map()
 #'
 #' @return None.
 #' the function shouldn't prompt error
-
 #' @examples
 #' test_corr_map_error_msg()
-
 test_corr_map_error_msg <- function() {
     # set test data for testing
-    test_data <- mtcars %>% tidyr::drop_na()
+    test_data <- mtcars
     features <- c('hp', 'disp', 'cyl', 'qsec')
-    str_data <- test_data %>% dplyr::mutate(cyl = as.character(cyl)) %>%  tidyr::drop_na()
+    str_data <- test_data %>% dplyr::mutate(cyl = as.character(cyl))
 
     # tests for exception handling
 
@@ -86,7 +84,6 @@ test_corr_map_error_msg <- function() {
         "Show right error if one or more columns in the given features is not numeric", {
             expect_error(corr_map(str_data, features))
         })
-
 
     test_that("Show right error if color_scheme input  is not as a char.", {
         expect_error(corr_map(test_data, features, color_scheme = list("test_color")))
