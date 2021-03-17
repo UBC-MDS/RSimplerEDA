@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # RSimplerEDA - A Package to Simplify Common Plotting for Exploratory Data Analysis in R
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/UBC-MDS/RSimplerEDA/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/RSimplerEDA/actions)[![codecov](https://codecov.io/gh/UBC-MDS/RSimplerEDA/branch/master/graph/badge.svg?token=VHC4UWQ7CB)](https://codecov.io/gh/UBC-MDS/RSimplerEDA)
 <!-- badges: end -->
 
 
