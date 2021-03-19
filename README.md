@@ -1,16 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-RSimplerEDA - A Package to Simplify Common Plotting for Exploratory Data Analysis in R
-======================================================================================
+# RSimplerEDA - A Package to Simplify Common Plotting for Exploratory Data Analysis in R
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/UBC-MDS/RSimplerEDA/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/RSimplerEDA/actions)[![codecov](https://codecov.io/gh/UBC-MDS/RSimplerEDA/branch/master/graph/badge.svg?token=VHC4UWQ7CB)](https://codecov.io/gh/UBC-MDS/RSimplerEDA)
+[![R-CMD-check](https://github.com/UBC-MDS/RSimplerEDA/workflows/R-CMD-check/badge.svg)![codecov](https://codecov.io/gh/UBC-MDS/RSimplerEDA/branch/master/graph/badge.svg?token=VHC4UWQ7CB)](https://github.com/UBC-MDS/RSimplerEDA/actions)
+
 <!-- badges: end -->
 
-Overview
---------
+## Overview
 
 Exploratory Data analysis (EDA) is an important step in any data
 analysis. However, carrying out EDA with the ggplot2 package requires a
@@ -24,8 +23,7 @@ plots based on specific user needs (theme, title, font, size and etc.).
 The users are able to spend more time on analyzing the data set and less
 time configuring ggplot plot settings.
 
-Package positioning
--------------------
+## Package positioning
 
 There are a number of packages that already provide similar
 functionality in the R Ecosystem, such as
@@ -36,14 +34,13 @@ However, most of them are not easily customizable. Our RSimplerEda
 package is light-weighted with focus in 3 common EDA plots and allows
 flexibility from plot types, color scheme, to plot titles.
 
-Functions
----------
+## Functions
 
 1.  `corr_map`: Plot a correlation map with the given dataframe object
     and a character vector with numerical features. Users are allowed to
     set multiple arguments regarding the setting of the correlation plot
-    including method to calculate the correlation, color schemes, plot
-    width, height, and plot title.
+    including method to calculate the correlation, color schemes, and
+    plot title.
 
 2.  `numerical_eda:` This function takes in a data frame object, two
     numeric columns, and produces either a scatter or line plot to
@@ -59,17 +56,17 @@ Functions
     function also offers customization on color, plot title, font size,
     color-scheme, plot size, opacity level, and facet factor.
 
-Installation
-------------
+## Installation
 
 You can install the development version from
 [GitHub](https://github.com/) with:
 
-    # install.packages("devtools")
-    devtools::install_github("UBC-MDS/RSimplerEDA")
+``` r
+# install.packages("devtools")
+devtools::install_github("UBC-MDS/RSimplerEDA")
+```
 
-Dependencies
-------------
+## Dependencies
 
 -   ggplot2 &gt;= 3.3.3
 -   dplyr &gt;=1.0.3
@@ -82,16 +79,59 @@ Dependencies
 -   palmerpenguins &gt;= 0.1.0
 -   magrittr &gt;= 2.0.1
 
-Example
--------
+## Example
 
-This is a basic example which shows you how to solve a common problem:
+These basic examplse which shows you how to use the function:
 
-    library(RSimplerEDA)
-    ## basic example code
+``` r
+library(RSimplerEDA)
+library(magrittr)
+library(palmerpenguins)
+penguins_drop_na <- penguins %>% tidyr::drop_na()
+```
 
-Contributors
-------------
+### 1. The Correlation Map
+
+``` r
+corr_map(penguins_drop_na, 
+         c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"))
+```
+
+<img src="man/figures/README-corr_map-1.png" width="100%" />
+
+### 2. Visualize the Relationship between Numeric Variables
+
+``` r
+numerical_eda(penguins, 
+              body_mass_g, 
+              bill_length_mm, 
+              color = species, 
+              title = "Body mass (grams) vs Bill Length (mm)")
+```
+
+<img src="man/figures/README-numerical_eda-1.png" width="100%" />
+
+### 3. Visualize the Distribution of a Categorical Variable
+
+``` r
+categorical_eda(penguins, 
+                xval = body_mass_g, 
+                plot_type = "histogram", 
+                color=island, 
+                facet_factor = "island", 
+                facet_col = 1, 
+                title="Distribution of Body Mass of Penguins from Each Island", 
+                font_size = 8)
+```
+
+<img src="man/figures/README-categorical_eda_histogram-1.png" width="100%" />
+
+## Documentation
+
+Please find the detail documentation in the
+[vignette](https://ubc-mds.github.io/RSimplerEDA/articles/RSimplerEDA-vignette.html).
+
+## Contributors
 
 ### Development Lead
 
