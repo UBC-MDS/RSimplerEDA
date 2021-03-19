@@ -5,10 +5,7 @@ Authors@R:
     c(person("Chuck", "Ho", email = "deepcl@student.ubc.ca", role = c("aut", "cre")),
     person("Nick", "Wu", email = "https://github.com/nichowu", role = "aut"),
     person("Deepak", "Sidhu", email = "https://github.com/deepaksidhu", role = "aut"))
-Description: Factors have driven people to extreme measures, like ordering
-    custom conference ribbons and laptop stickers to express how HELLNO we
-    feel about stringsAsFactors. And yet, sometimes you need them. Can they 
-    be made less maddening? Let's find out.
+Description: RSimplerEDA package is a package that helps to plot 3 types of common EDA plots.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
