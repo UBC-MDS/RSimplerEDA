@@ -90,7 +90,7 @@ Identifying correlation is important in the EDA process. It not only provides an
 
 In the example questions regarding correlation among numerical variables in the penguin dataset, there seems to be high positive correlation between flipper length and body mass
 
-```{r corr_map, fig.height=4, fig.width=7}
+```{r corr_map, fig.height=4, fig.width=8}
 
 
 corr_map(penguins_drop_na, c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"))
@@ -107,7 +107,7 @@ numerical_eda(penguins, body_mass_g, bill_length_mm, color = species, title = "B
 
 Optionally we can also look at the relationship of `body_mass_g` and `bill_length_mm` based on the `sex` of penguins.
 
-```{r numerical_eda log tranform, message=FALSE, warning=FALSE, fig.height=4, fig.width=6}
+```{r numerical_eda_log_tranform, message=FALSE, warning=FALSE, fig.height=4, fig.width=6}
 
 numerical_eda(penguins, body_mass_g, bill_length_mm, color = sex, title = "Body mass (grams) vs Bill Length (mm)")
 ```
@@ -116,7 +116,7 @@ numerical_eda(penguins, body_mass_g, bill_length_mm, color = sex, title = "Body 
 
 `categorical_eda` takes in data frame as input data, a categorical feature as color, and a numerical or categorical feature as value on x-axis, to produce a histogram plot that visualize the distribution of the numerical feature on each categorical variable. With `penguins` data frame as an example, `categorical_eda` plots three faceted histogram that shows the distribution of `body_mass_g` of penguins from different island.
 
-```{r categorical_eda histogram, warning = FALSE, fig.height=4, fig.width=6}
+```{r categorical_eda_histogram, warning = FALSE, fig.height=4, fig.width=6}
 
 categorical_eda(penguins, 
                 xval = body_mass_g, 
@@ -130,7 +130,7 @@ categorical_eda(penguins,
 
 In addition to "histogram", `categorical_eda` also has the option to plot density graph by changing plot\_type to density and adding an opacity value.
 
-```{r categorical_eda density, warning = FALSE, fig.height=4, fig.width=6}
+```{r categorical_eda_density, warning = FALSE, fig.height=4, fig.width=6}
 
 categorical_eda(penguins, 
                 xval = body_mass_g, 

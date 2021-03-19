@@ -166,7 +166,7 @@
 <code class="sourceCode R">
 
 <span class="fu"><a href="../reference/corr_map.html">corr_map</a></span><span class="op">(</span><span class="va">penguins_drop_na</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, <span class="st">"flipper_length_mm"</span>, <span class="st">"body_mass_g"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p><img src="RSimplerEDA-vignette_files/figure-html/corr_map-1.png" width="672"></p>
+<p><img src="RSimplerEDA-vignette_files/figure-html/corr_map-1.png" width="768"></p>
 </div>
 <div id="finding-the-relationship-of-two-numeric-variables-numerical_eda" class="section level3">
 <h3 class="hasAnchor">
@@ -180,7 +180,7 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="fu"><a href="../reference/numerical_eda.html">numerical_eda</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="va">body_mass_g</span>, <span class="va">bill_length_mm</span>, color <span class="op">=</span> <span class="va">sex</span>, title <span class="op">=</span> <span class="st">"Body mass (grams) vs Bill Length (mm)"</span><span class="op">)</span></code></pre></div>
-<p><img src="RSimplerEDA-vignette_files/figure-html/numerical_eda%20log%20tranform-1.png" width="576"></p>
+<p><img src="RSimplerEDA-vignette_files/figure-html/numerical_eda_log_tranform-1.png" width="576"></p>
 </div>
 <div id="visualize-the-distribution-of-body_mass_g-in-different-island-categorical_eda" class="section level3">
 <h3 class="hasAnchor">
@@ -196,7 +196,7 @@
                 facet_col <span class="op">=</span> <span class="fl">1</span>, 
                 title<span class="op">=</span><span class="st">"Distribution of Body Mass of Penguins from Each Island"</span>, 
                 font_size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></code></pre></div>
-<p><img src="RSimplerEDA-vignette_files/figure-html/categorical_eda%20histogram-1.png" width="576"></p>
+<p><img src="RSimplerEDA-vignette_files/figure-html/categorical_eda_histogram-1.png" width="576"></p>
 <p>In addition to “histogram”, <code>categorical_eda</code> also has the option to plot density graph by changing plot_type to density and adding an opacity value.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
@@ -207,7 +207,7 @@
                 opacity <span class="op">=</span> <span class="fl">0.6</span>, 
                 title<span class="op">=</span><span class="st">"Density Graph of Body Mass of Penguins from Each Island"</span>, 
                 font_size<span class="op">=</span><span class="fl">8</span><span class="op">)</span></code></pre></div>
-<p><img src="RSimplerEDA-vignette_files/figure-html/categorical_eda%20density-1.png" width="576"></p>
+<p><img src="RSimplerEDA-vignette_files/figure-html/categorical_eda_density-1.png" width="576"></p>
 </div>
 </div>
   </div>
