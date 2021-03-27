@@ -68,16 +68,16 @@ devtools::install_github("UBC-MDS/RSimplerEDA")
 
 ## Dependencies
 
--   ggplot2 &gt;= 3.3.3
--   dplyr &gt;=1.0.3
--   stringr &gt;= 1.4.0
--   tibble &gt;=3.0.4
--   tidyr &gt;= 1.1.2
--   ggthemes &gt;= 4.2.0
--   assertthat &gt;= 0.2.1
--   rlang &gt;= 0.4.10
--   palmerpenguins &gt;= 0.1.0
--   magrittr &gt;= 2.0.1
+  - ggplot2 \>= 3.3.3
+  - dplyr \>=1.0.3
+  - stringr \>= 1.4.0
+  - tibble \>=3.0.4
+  - tidyr \>= 1.1.2
+  - ggthemes \>= 4.2.0
+  - assertthat \>= 0.2.1
+  - rlang \>= 0.4.10
+  - palmerpenguins \>= 0.1.0
+  - magrittr \>= 2.0.1
 
 ## Example
 
@@ -90,33 +90,36 @@ library(palmerpenguins)
 penguins_drop_na <- penguins %>% tidyr::drop_na()
 ```
 
-### 1. The Correlation Map
+### 1\. The Correlation Map
 
 ``` r
-corr_map(penguins_drop_na, 
+corr_map(penguins_drop_na,  #Please make sure there is no NA in the given data
          c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"))
 ```
 
 <img src="man/figures/README-corr_map-1.png" width="100%" />
 
-### 2. Visualize the Relationship between Numeric Variables
+### 2\. Visualize the Relationship between Numeric Variables
 
 ``` r
+
 numerical_eda(penguins, 
               body_mass_g, 
               bill_length_mm, 
+              plot_type = "scatter",  # also support Line Plot with "line"
               color = species, 
               title = "Body mass (grams) vs Bill Length (mm)")
 ```
 
 <img src="man/figures/README-numerical_eda-1.png" width="100%" />
 
-### 3. Visualize the Distribution of a Categorical Variable
+### 3\. Visualize the Distribution of a Categorical Variable
 
 ``` r
+
 categorical_eda(penguins, 
                 xval = body_mass_g, 
-                plot_type = "histogram", 
+                plot_type = "histogram",  # also support Density Plot with "density"
                 color=island, 
                 facet_factor = "island", 
                 facet_col = 1, 
@@ -136,7 +139,7 @@ Please find the detail documentation in the
 ### Development Lead
 
 | Contributor Name | GitHub Username                               |
-|------------------|-----------------------------------------------|
+| ---------------- | --------------------------------------------- |
 | Cheuk (Chuck) Ho | [ChuckHo777](https://github.com/ChuckHo777)   |
 | Deepak Sidhu     | [deepaksidhu](https://github.com/deepaksidhu) |
 | Nicholas Wu      | [nichowu](https://github.com/nichowu)         |

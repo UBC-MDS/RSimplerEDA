@@ -1,6 +1,6 @@
 Package: RSimplerEDA
-Title: simpler_eda_r
-Version: 0.0.0.9000
+Title: Simpler_eda_r
+Version: 0.3.0
 Authors@R:
     c(person("Chuck", "Ho", email = "deepcl@student.ubc.ca", role = c("aut", "cre")),
     person("Nick", "Wu", email = "https://github.com/nichowu", role = "aut"),

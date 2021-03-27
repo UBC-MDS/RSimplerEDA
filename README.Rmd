@@ -73,7 +73,7 @@ penguins_drop_na <- penguins %>% tidyr::drop_na()
 ### 1. The Correlation Map
 
 ```{r corr_map, fig.height=4, fig.width=8}
-corr_map(penguins_drop_na, 
+corr_map(penguins_drop_na,  #Please make sure there is no NA in the given data
          c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"))
 ```
 
@@ -84,6 +84,7 @@ corr_map(penguins_drop_na,
 numerical_eda(penguins, 
               body_mass_g, 
               bill_length_mm, 
+              plot_type = "scatter",  # also support Line Plot with "line"
               color = species, 
               title = "Body mass (grams) vs Bill Length (mm)")
 ```
@@ -94,7 +95,7 @@ numerical_eda(penguins,
 
 categorical_eda(penguins, 
                 xval = body_mass_g, 
-                plot_type = "histogram", 
+                plot_type = "histogram",  # also support Density Plot with "density"
                 color=island, 
                 facet_factor = "island", 
                 facet_col = 1, 
